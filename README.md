@@ -28,7 +28,6 @@ total 32
 drwxr-xr-x@ 7 ...   238 Jul 27 17:58 VidyoClient-OSXSDK
 drwxr-xr-x@ 7 ...   238 Jul 27 17:31 VidyoClient-WindowsSDK
 -rw-r--r--  1 ...  1822 Aug 11 17:31 binding.gyp
-drwxr-xr-x@ 4 ...   136 Jun 30 15:15 include
 -rw-r--r--  1 ...  1999 Aug 17 16:54 main.js
 -rw-r--r--  1 ...   366 Jun 16 13:13 package.json
 ```
