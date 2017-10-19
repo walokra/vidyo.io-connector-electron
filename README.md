@@ -50,8 +50,8 @@ export VIDYO_CLIENT_LIB_DIR=$PWD/VidyoClient-OSXSDK/lib/macos
 
 For Windows:
 ```
-Set environment variable VIDYO_CLIENT_INCL_DIR to VidyoClient-WindowsSDK\include
-Set environment variable VIDYO_CLIENT_LIB_DIR to VidyoClient-WindowsSDK\lib\windows\x64\Release
+set VIDYO_CLIENT_INCL_DIR=%cd%\VidyoClient-WindowsSDK\include
+set VIDYO_CLIENT_LIB_DIR=%cd%\VidyoClient-WindowsSDK\lib\windows\x64\Release
 ```
 
 ### Build Vidyo Client Electron add-on
