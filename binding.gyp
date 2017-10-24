@@ -17,7 +17,10 @@
             "<!(echo $VIDYO_CLIENT_LIB_DIR)/libcrypto.a",
             "<!(echo $VIDYO_CLIENT_LIB_DIR)/libssl.a",
             "<!(echo $VIDYO_CLIENT_LIB_DIR)/libVidyoClient.a",
-          ]
+          ],
+          "xcode_settings": {
+            'MACOSX_DEPLOYMENT_TARGET': '10.8'
+          }
         }],
         ['OS=="win"', {
           "include_dirs" : [
