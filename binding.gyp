@@ -45,6 +45,7 @@
               'AdditionalOptions': 
               [
                 '/FORCE:MULTIPLE',
+                '/LTCG:OFF',
               ]
             }
           }
