@@ -7,7 +7,7 @@ Follow these instructions to download corresponding developer package(s) from vi
 ## Prerequisites
 
 Create a directory for the electron sample (e.g. electronsample).
-Go to https://developer.vidyo.io/packages and download Mac OSX Package and/or Windows Package.  We need the libraries and include files from these packages to build electron add-on.
+Go to https://developer.vidyo.io/documentation/latest/getting-started and download SDK for macOS and/or Windows.  We need the libraries and include files from these packages to build electron add-on.
 Extract the content of the package(s) into the new directory.
 
 ```
@@ -62,7 +62,7 @@ node-gyp rebuild --target=1.7.5 --arch=x64 --dist-url=https://atom.io/download/e
 ```
 For Windows:
 ```
-node-gyp rebuild --target=1.7.5 --arch=x64 --dist-url=https://atom.io/download/electron -msvs_version=2013
+node-gyp rebuild --target=1.7.5 --arch=x64 --dist-url=https://atom.io/download/electron -msvs_version=2017
 ```
 
 ### Run the App
