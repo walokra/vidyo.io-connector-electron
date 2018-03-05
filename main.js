@@ -1,3 +1,4 @@
+
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
@@ -57,6 +58,11 @@ app.on('activate', function () {
     createWindow()
   }
 })
+
+// Uncomment the following line to disable hardware acceleration
+// in order to work around the Windows 10 rendering problem
+// introduced in Windows 10, version 1709.
+//app.disableHardwareAcceleration();
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
