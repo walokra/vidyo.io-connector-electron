@@ -59,10 +59,10 @@ app.on('activate', function () {
   }
 })
 
-// Uncomment the following line to disable hardware acceleration
+// Disable hardware acceleration
 // in order to work around the Windows 10 rendering problem
 // introduced in Windows 10, version 1709.
-//app.disableHardwareAcceleration();
+app.disableHardwareAcceleration();
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
