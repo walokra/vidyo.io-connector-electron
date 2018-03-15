@@ -73,3 +73,7 @@ npm start
 ### Note
 Replace 1.7.5 with desired electron version number as needed.
 
+### Known Issues
+Windows 10 update 1709 introduced an issue which prevents video from rendering properly.
+The workaround is to upgrade to the latest Electron (currently v1.8.3) and to disable hardware acceleration, which can be done as follows in main.js:
+   app.disableHardwareAcceleration();
