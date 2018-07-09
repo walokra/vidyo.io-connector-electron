@@ -9,8 +9,8 @@ Follow these instructions to download corresponding developer package(s) from vi
 Create a directory for the Electron sample (e.g. electronsample).
 Download the Vidyo Client SDK for macOS and/or Windows.  We need the libraries and include files from these packages to build Electron add-on.
 Extract the content of the package(s) into the new directory.
-> macOS SDK: https://static.vidyo.io/latest/VidyoClient-OSXSDK.zip 
-> Windows SDK (Visual Studio 2017): https://static.vidyo.io/latest/package/VidyoClient-WinVS2017SDK.zip 
+> macOS SDK: https://static.vidyo.io/latest/VidyoClient-OSXSDK.zip  
+> Windows SDK (Visual Studio 2017): https://static.vidyo.io/latest/package/VidyoClient-WinVS2017SDK.zip  
 
 ```
 $ ls -l electronsample
