@@ -1,17 +1,16 @@
 # VidyoConnector-electron
 
-Run VidyoConnector web app on desktop PC or Mac using electron.
+Run VidyoConnector web app on Windows or macOS PC using Electron.
 
 Follow these instructions to download corresponding developer package(s) from vidyo.io, install tools for building and running electron with add-on, then run the VidyoConnector-electron app.
 
 ## Prerequisites
 
-Create a directory for the electron sample (e.g. electronsample).
-Download the Vidyo Client SDK for macOS and/or Windows.  We need the libraries and include files from these packages to build electron add-on.
+Create a directory for the Electron sample (e.g. electronsample).
+Download the Vidyo Client SDK for macOS and/or Windows.  We need the libraries and include files from these packages to build Electron add-on.
 Extract the content of the package(s) into the new directory.
-> macOS SDK: https://static.vidyo.io/latest/VidyoClient-OSXSDK.zip
-> Windows SDK (Visual Studio 2017): https://static.vidyo.io/latest/package/VidyoClient-WinVS2017SDK.zip
-
+> macOS SDK: https://static.vidyo.io/latest/VidyoClient-OSXSDK.zip 
+> Windows SDK (Visual Studio 2017): https://static.vidyo.io/latest/package/VidyoClient-WinVS2017SDK.zip 
 
 ```
 $ ls -l electronsample
