@@ -30,6 +30,7 @@
             "d3d9.lib",
             "opengl32.lib",
             "glu32.lib",
+            "crypt32.lib",
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\libeay32",
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\libspeex",
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\opus",
