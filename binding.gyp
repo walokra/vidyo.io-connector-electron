@@ -11,6 +11,7 @@
           "libraries": [
             "-framework CoreLocation",
             "-framework AVFoundation",
+            "<!(echo $VIDYO_CLIENT_LIB_DIR)/libvpx.a",
             "<!(echo $VIDYO_CLIENT_LIB_DIR)/libspeex.a",
             "<!(echo $VIDYO_CLIENT_LIB_DIR)/libopus.a",
             "<!(echo $VIDYO_CLIENT_LIB_DIR)/libsrtp.a",
