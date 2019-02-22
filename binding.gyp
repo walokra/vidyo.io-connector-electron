@@ -40,15 +40,32 @@
             '-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\VidyoClient',
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\vpxmt",
           ],
-          'msvs_settings':
-          {
-            'VCLinkerTool':
-            {
-              'AdditionalOptions': 
-              [
-                '/FORCE:MULTIPLE',
-                '/LTCG:OFF',
-              ]
+          'configurations': {
+            'Debug': {
+              'msvs_settings': {
+                'VCLinkerTool': {
+                    'AdditionalOptions': [
+                      '/FORCE:MULTIPLE',
+                      '/LTCG:OFF',
+                    ]
+                  },
+                  'VCCLCompilerTool': {
+                    'Optimization': 0
+                  }
+              }
+            },
+            'Release': {                            
+              'msvs_settings': {
+                'VCLinkerTool': {
+                  'AdditionalOptions': [
+                    '/FORCE:MULTIPLE',
+                    '/LTCG:OFF',
+                  ]
+                },
+                'VCCLCompilerTool': {
+                  'Optimization': 0
+                }
+              }
             }
           }
         }],
