@@ -1,8 +1,8 @@
-# VidyoConnector-electron
+# vidyo.io-connector-electron
 
 Run VidyoConnector web app on Windows or macOS PC using Electron.
 
-Follow these instructions to download corresponding developer package(s) from vidyo.io, install tools for building and running electron with add-on, then run the VidyoConnector-electron app.
+Follow these instructions to download corresponding developer package(s) from vidyo.io, install tools for building and running electron with add-on, then run the vidyo.io-connector-electron app.
 
 ## Prerequisites
 
