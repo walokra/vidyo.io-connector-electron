@@ -9,8 +9,8 @@ Follow these instructions to download corresponding developer package(s) from vi
 Create a directory for the Electron sample (e.g. electronsample).
 Download the Vidyo Client SDK for macOS and/or Windows.  We need the libraries and include files from these packages to build Electron add-on.
 Extract the content of the package(s) into the new directory.
-> macOS SDK: https://static.vidyo.io/latest/package/VidyoClient-OSXSDK.zip  
-> Windows SDK (Visual Studio 2017): https://static.vidyo.io/latest/package/VidyoClient-WinVS2017SDK.zip  
+> macOS SDK: https://static.vidyo.io/latest/package/VidyoClient-OSXSDK.zip
+> Windows SDK (Visual Studio 2017): https://static.vidyo.io/latest/package/VidyoClient-WinVS2017SDK.zip
 
 ```
 $ ls -l electronsample
@@ -36,7 +36,7 @@ drwxr-xr-x@ 7 ...   238 Jul 27 17:31 VidyoClient-WinVS2017SDK
 
 Install electron and node-gyp:
 ```
-npm install electron@2.0.4
+npm install electron@9.0.0
 npm install -g node-gyp
 ```
 
@@ -60,11 +60,11 @@ set VIDYO_CLIENT_LIB_DIR=%cd%\VidyoClient-WinVS2017SDK\lib\windows\x64\Release
 
 For Mac:
 ```
-node-gyp rebuild --target=2.0.4 --arch=x64 --dist-url=https://atom.io/download/electron
+node-gyp rebuild --target=9.0.0 --arch=x64 --dist-url=https://atom.io/download/electron
 ```
 For Windows:
 ```
-node-gyp rebuild --target=2.0.4 --arch=x64 --dist-url=https://atom.io/download/electron -msvs_version=2017
+node-gyp rebuild --target=9.0.0 --arch=x64 --dist-url=https://atom.io/download/electron -msvs_version=2017
 ```
 
 ### Run the App
@@ -73,7 +73,7 @@ npm start
 ```
 
 ### Note
-Replace 2.0.4 with desired electron version number as needed.
+Replace 9.0.0 with desired electron version number as needed.
 
 ### Known Issues
 Windows 10 update 1709 introduced an issue which prevents video from rendering properly.

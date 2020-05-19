@@ -7,6 +7,7 @@
         ['OS=="mac"', {
           "include_dirs" : [
              "<!(echo $VIDYO_CLIENT_INCL_DIR)",
+             "<!(node -e \"require('nan')\")"
           ],
           "libraries": [
             "-framework CoreLocation",
@@ -26,17 +27,18 @@
         ['OS=="win"', {
           "include_dirs" : [
              "<!(echo %VIDYO_CLIENT_INCL_DIR%)",
+             "<!(node -e \"require('nan')\")"
           ],
           "libraries": [
             "d3d9.lib",
             "opengl32.lib",
             "glu32.lib",
             "crypt32.lib",
-            "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\libeay32",
+            "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\libcrypto",
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\libspeex",
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\opus",
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\srtp",
-            "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\ssleay32",
+            "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\libssl",
             '-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\VidyoClient',
             "-l<!(echo %VIDYO_CLIENT_LIB_DIR%)\\vpxmt",
           ],
@@ -54,7 +56,7 @@
                   }
               }
             },
-            'Release': {                            
+            'Release': {
               'msvs_settings': {
                 'VCLinkerTool': {
                   'AdditionalOptions': [

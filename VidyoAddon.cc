@@ -1,53 +1,70 @@
 // VidyoAddon.cc
-#include <node.h>
+#include <nan.h>
 #include "Lmi/VidyoClient/VidyoClientElectron.h"
 #include "Lmi/Os/LmiMallocAllocator.h"
 #include <string>
 
-using v8::FunctionCallbackInfo;
-using v8::Isolate;
-using v8::Local;
-using v8::Object;
-using v8::String;
-using v8::Value;
-
-void VidyoAddonInit(const FunctionCallbackInfo<Value>& args)
+void VidyoAddonInit(const Nan::FunctionCallbackInfo<v8::Value>& args)
 {
-  Isolate* isolate = args.GetIsolate();
-
-  if (VidyoClientElectronInit())
-    args.GetReturnValue().Set(String::NewFromUtf8(isolate, "Succeed"));
-  else
-    args.GetReturnValue().Set(String::NewFromUtf8(isolate, "Fail"));
+    // v8::Local<v8::Context> context = args.GetIsolate()->GetCurrentContext();
+    if (VidyoClientElectronInit())
+        args.GetReturnValue().Set(Nan::New(true));
+    else
+        args.GetReturnValue().Set(Nan::New(false));
 }
-
-void VidyoAddonUninit(const FunctionCallbackInfo<Value>& args)
+//
+void VidyoAddonUninit(const Nan::FunctionCallbackInfo<v8::Value>& args)
 {
-  VidyoClientElectronUninit();
+    VidyoClientElectronUninit();
 }
-
-void VidyoAddonDispatch(const FunctionCallbackInfo<Value>& args)
+//
+void VidyoAddonDispatch(const Nan::FunctionCallbackInfo<v8::Value>& args)
 {
-  Isolate* isolate = args.GetIsolate();
-  String::Utf8Value data(args[0]->ToString());
+  // v8::Isolate* isolate = args.GetIsolate();
+  // v8::String::Utf8Value data(args[0]->ToString());
+  Nan::Utf8String data(args[0]);
   std::string request(*data);
   LmiString requestSt;
   LmiString responseSt;
   LmiAllocator *alloc;
 
-  alloc = LmiMallocAllocatorGetDefault(); 
+  alloc = LmiMallocAllocatorGetDefault();
   LmiStringConstructCStr(&requestSt, request.c_str(), alloc);
   LmiStringConstructDefault(&responseSt, alloc);
   VidyoClientElectronDispatch(&requestSt, &responseSt);
 
-  args.GetReturnValue().Set(String::NewFromUtf8(isolate, LmiStringCStr(&responseSt)));
+
+  args.GetReturnValue().Set(Nan::New(LmiStringCStr(&responseSt)).ToLocalChecked());
 }
 
-void init(Local<Object> exports) {
-  NODE_SET_METHOD(exports, "VidyoAddonInit", VidyoAddonInit);
-  NODE_SET_METHOD(exports, "VidyoAddonUninit", VidyoAddonUninit);
-  NODE_SET_METHOD(exports, "VidyoAddonDispatch", VidyoAddonDispatch);
+void init(v8::Local<v8::Object> exports) {
+    v8::Local<v8::Context> context = exports->CreationContext();
+
+    exports->Set(context,
+        Nan::New("VidyoAddonInit").ToLocalChecked(),
+        Nan::New<v8::FunctionTemplate>(VidyoAddonInit)
+        ->GetFunction(context)
+        .ToLocalChecked()
+    );
+
+    exports->Set(context,
+        Nan::New("VidyoAddonUninit").ToLocalChecked(),
+        Nan::New<v8::FunctionTemplate>(VidyoAddonUninit)
+        ->GetFunction(context)
+        .ToLocalChecked()
+    );
+
+    exports->Set(context,
+        Nan::New("VidyoAddonDispatch").ToLocalChecked(),
+        Nan::New<v8::FunctionTemplate>(VidyoAddonDispatch)
+        ->GetFunction(context)
+        .ToLocalChecked()
+    );
+
+    // NODE_SET_METHOD(exports, "VidyoAddonInit", VidyoAddonInit);
+    // NODE_SET_METHOD(exports, "VidyoAddonUninit", VidyoAddonUninit);
+    // NODE_SET_METHOD(exports, "VidyoAddonDispatch", VidyoAddonDispatch);
 }
+
 
 NODE_MODULE(VidyoAddon, init)
-
